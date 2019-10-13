@@ -6,6 +6,6 @@
 		<name>Stanislav Shtin</name>
 	</maintainer>
 	<longdescription lang="en">
-		Bitwig Studio is a dynamic software for creating and performing your musical ideas in the studio and on stage.
+		Faust (Functional Audio Stream) is a functional programming language specifically designed for real-time signal processing and synthesis. A distinctive characteristic of Faust is to be fully compiled.
 	</longdescription>
 </pkgmetadata>
