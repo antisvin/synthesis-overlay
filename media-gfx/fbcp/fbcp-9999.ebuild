@@ -21,5 +21,5 @@ RDEPEND="${DEPEND}"
 BDEPEND=""
 
 src_install() {
-	dobin fbcp
+	dobin "${BUILD_DIR}/fbcp"
 }
