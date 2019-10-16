@@ -20,3 +20,6 @@ DEPEND=">=media-libs/raspberrypi-userland-1.20190808"
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
+src_install() {
+	dobin fbcp
+}
