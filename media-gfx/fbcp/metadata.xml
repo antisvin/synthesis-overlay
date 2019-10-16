@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>antisvin@gmail.com</email>
+		<name>Stanislav Shtin</name>
+	</maintainer>
+	<longdescription lang="en">
+		This program used for copy primary framebuffer to secondary framebuffer (eg. FBTFT). It require recent raspberry pi firmware (> 2013-07-11) to work properly.
+	</longdescription>
+</pkgmetadata>
