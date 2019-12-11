@@ -71,6 +71,7 @@ src_install() {
 	fperms +x ${BITWIG_HOME}/bin/show-splash-gtk
 	fperms +x ${BITWIG_HOME}/bin32/BitwigPluginHost32
 	fperms +x ${BITWIG_HOME}/bitwig-studio
+	fperms +x ${BITWIG_HOME}/lib/jre/bin/java
 
 	dosym ${BITWIG_HOME}/bitwig-studio /usr/bin/bitwig-studio
 	exeinto "${BITWIG_HOME}/bin"
