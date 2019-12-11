@@ -8,7 +8,7 @@ inherit eutils xdg-utils gnome2-utils unpacker
 
 DESCRIPTION="Music production and performance system"
 HOMEPAGE="http://bitwig.com/"
-SRC_URI="http://downloads.bitwig.com/stable/${PV}/${P}.deb"
+SRC_URI="https://downloads.bitwig.com/stable/${PV}/${P}.deb"
 LICENSE="Bitwig Commercial EULA"
 SLOT="0"
 KEYWORDS="~amd64"
