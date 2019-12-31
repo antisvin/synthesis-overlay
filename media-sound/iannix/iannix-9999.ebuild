@@ -47,9 +47,9 @@ src_install() {
 #        mv 'Icon'$'\r' Icon
 #        cd "${S}"
 
-#        insinto /usr/share/${PN}
-#        doins -r Patches
-#        doins -r Tools
+        insinto /usr/share/${PN}
+        doins -r Patches
+        doins -r Tools
         # It doesn't work anyway:
 #       make_wrapper Iannix "/usr/bin/iannix" "/usr/share/${PN}" "/usr/share/${PN},/usr/share/${PN}/pixmaps"
 
