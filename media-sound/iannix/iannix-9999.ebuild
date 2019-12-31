@@ -1,7 +1,7 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit qmake-utils git-r3
 
@@ -41,15 +41,15 @@ src_configure() {
 }
 
 src_install() {
-        emake DESTDIR="${D}" install
+        emake INSTALL_ROOT="${D}" install
 
-        cd "${S}/Patches/Ableton Live/"
-        mv 'Icon'$'\r' Icon
-        cd "${S}"
+#        cd "${S}/Patches/Ableton Live/"
+#        mv 'Icon'$'\r' Icon
+#        cd "${S}"
 
-        insinto /usr/share/${PN}
-        doins -r Patches
-        doins -r Tools
+#        insinto /usr/share/${PN}
+#        doins -r Patches
+#        doins -r Tools
         # It doesn't work anyway:
 #       make_wrapper Iannix "/usr/bin/iannix" "/usr/share/${PN}" "/usr/share/${PN},/usr/share/${PN}/pixmaps"
 
