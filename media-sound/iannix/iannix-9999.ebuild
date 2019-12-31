@@ -37,7 +37,7 @@ src_unpack() {
 }
 
 src_configure() {
-        eqmake5 -r
+        eqmake5 IanniX.pro PREFIX=/usr
 }
 
 src_install() {
