@@ -12,7 +12,7 @@ SRC_URI="https://github.com/x42/xjadeo/archive/v${PV}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="alsa imlib midi osc osd qt4 portmidi sdl tools xv"
+IUSE="alsa imlib midi osc osd portmidi sdl tools xv"
 REQUIRED_USE="alsa? ( midi )
         portmidi? ( midi )"
 
@@ -28,9 +28,6 @@ RDEPEND="virtual/jack
 
 DEPEND="${RDPEND}
         >=sys-libs/zlib-1.2.2
-        qt4? ( dev-qt/qt3support
-                >=dev-qt/qttest-4:4
-        )
         virtual/pkgconfig"
 
 #PATCHES=( "${FILESDIR}/${P}-no-libporttime.patch" )
@@ -49,7 +46,6 @@ src_configure() {
                 $(use_enable portmidi)
                 $(use_enable osc)
                 $(use_enable osd ft)
-                $(use_enable qt4 qtgui)
                 $(use_enable sdl)
                 $(use_enable tools contrib)
                 $(use_enable xv)
