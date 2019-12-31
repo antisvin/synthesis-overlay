@@ -1,9 +1,9 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
-inherit eutils git-r3
+inherit qmake-utils git-r3
 
 DESCRIPTION="Graphical score editor based on the previous UPIC developed by Iannis Xenakis"
 HOMEPAGE="http://www.iannix.org/"
@@ -36,8 +36,12 @@ src_unpack() {
         git-r3_src_unpack
 }
 
+src_configure() {
+        eqmake5 -r
+}
+
 src_install() {
-        qt4-r2_src_install
+        emake DESTDIR="${D}" install
 
         cd "${S}/Patches/Ableton Live/"
         mv 'Icon'$'\r' Icon
