@@ -49,6 +49,7 @@ src_configure() {
                 $(use_enable sdl)
                 $(use_enable tools contrib)
                 $(use_enable xv)
+                $(use_enable pthread)
                 --disable-timescale
         )
 
