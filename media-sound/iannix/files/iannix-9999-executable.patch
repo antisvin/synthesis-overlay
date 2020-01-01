@@ -1,0 +1,13 @@
+diff --git a/IanniX.pro b/IanniX.pro
+index b2d0e50..0f58b1f 100644
+--- a/IanniX.pro
++++ b/IanniX.pro
+@@ -76,7 +76,7 @@ unix:!mac {
+     message(Install Prefix is: $$PREFIX)
+ 
+     TARGET         = iannix
+-    target.path    = $$PREFIX/bin
++    target.path    = $$PREFIX/share/iannix
+     INSTALLS      += target
+ 
+     desktop.path   = $$PREFIX/share/applications

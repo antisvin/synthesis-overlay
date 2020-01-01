@@ -15,6 +15,9 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
 IUSE="examples"
+PATCHES=(
+	"${FILESDIR}/${P}-executable.patch"
+)
 
 DEPEND="${RDEPEND}"
 RDEPEND="dev-qt/qtcore:5
@@ -37,7 +40,7 @@ src_unpack() {
 }
 
 src_configure() {
-        eqmake5 IanniX.pro PREFIX=/usr/share/iannix
+        eqmake5 IanniX.pro PREFIX=/usr
 }
 
 src_install() {
@@ -50,8 +53,7 @@ src_install() {
         insinto /usr/share/${PN}
         doins -r Patches
         doins -r Tools
-        # It doesn't work anyway:
-       make_wrapper IanniX "/usr/share/${PN}/bin/${PN}"
+	dosym "/usr/share/${PN}/${PN}" "/usr/bin/IanniX"
 
         if use examples; then
                 insinto /usr/share/${PN}
@@ -68,7 +70,7 @@ pkg_postinst() {
         einfo ""
 
         if use examples; then
-                einfo "The examples have been installed to /usr/share/${PN}/examples"
+                einfo "The examples have been installed to /usr/share/${PN}/Examples"
         fi
         einfo "The documentation is available by clicking on the ? button in IanniX"
 }
