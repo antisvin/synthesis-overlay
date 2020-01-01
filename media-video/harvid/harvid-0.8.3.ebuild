@@ -14,11 +14,11 @@ KEYWORDS="~x86 ~amd64"
 IUSE="alsa imlib midi osc osd portmidi sdl tools xv"
 #REQUIRED_USE=""
 
-DEPEND="media-video/ffmpeg
+RDEPEND="media-video/ffmpeg
          media-libs/libpng
          media-libs/libjpeg-turbo"
 
-RDEPEND="${DEPEND}"
+DEPEND="${RDEPEND} app-editors/vim"
 
 DOCS=( ChangeLog README.md )
 
