@@ -24,7 +24,7 @@ DOCS=( ChangeLog README.md )
 
 
 src_compile() {
-        emake CC="$(tc-getCC)" PREFIX=/usr
+        emake -j1 PREFIX=/usr
 }
 
 src_install() {
