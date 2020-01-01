@@ -37,7 +37,7 @@ src_unpack() {
 }
 
 src_configure() {
-        eqmake5 IanniX.pro PREFIX=/usr
+        eqmake5 IanniX.pro PREFIX=/usr/share/iannix
 }
 
 src_install() {
@@ -51,7 +51,7 @@ src_install() {
         doins -r Patches
         doins -r Tools
         # It doesn't work anyway:
-#       make_wrapper Iannix "/usr/bin/iannix" "/usr/share/${PN}" "/usr/share/${PN},/usr/share/${PN}/pixmaps"
+       make_wrapper IanniX "/usr/share/${PN}/bin/${PN}"
 
         if use examples; then
                 insinto /usr/share/${PN}
