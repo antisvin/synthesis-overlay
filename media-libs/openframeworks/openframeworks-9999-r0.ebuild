@@ -3,6 +3,7 @@
 
 EAPI=7
 
+HOMEPAGE="https://openframeworks.cc"
 if [[ ${PV} == *9999 ]]; then
         SCM="git-r3"
         EGIT_REPO_URI="https://github.com/openframeworks/openFrameworks.git"
@@ -21,7 +22,7 @@ fi
 
 inherit toolchain-funcs ${GIT_ECLASS}
 DESCRIPTION="an open source C++ toolkit for creative coding"
-HOMEPAGE="https://openframeworks.cc"
+
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
