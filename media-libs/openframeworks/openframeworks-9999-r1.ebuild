@@ -8,11 +8,11 @@ if [[ ${PV} == *9999 ]]; then
         EGIT_REPO_URI="https://github.com/openframeworks/openFrameworks.git"
         GIT_ECLASS="git-r3"
         # In order of stability:
-        # 9999-r0: master
-        # 9999-r1: stable
+        # 9999-r0: stable
+        # 9999-r1: master
         case "${PVR}" in
-                9999-r0) EGIT_BRANCH=master ;;
-                9999-r1) EGIT_BRANCH=stable ;;
+                9999-r0) EGIT_BRANCH=stable ;;
+                9999-r1) EGIT_BRANCH=master ;;
         esac
 else
         GIT_ECLASS=""
