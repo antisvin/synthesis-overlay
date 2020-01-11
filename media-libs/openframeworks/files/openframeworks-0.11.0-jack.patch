@@ -1,0 +1,13 @@
+diff --git a/libs/openFrameworksCompiled/project/makefileCommon/config.linux.common.mk b/libs/openFrameworksCompiled/project/makefileCommon/config.linux.common.mk
+index 4f28afd9e..3ad367911 100755
+--- a/libs/openFrameworksCompiled/project/makefileCommon/config.linux.common.mk
++++ b/libs/openFrameworksCompiled/project/makefileCommon/config.linux.common.mk
+@@ -378,7 +378,7 @@ endif
+ 
+ 
+ ifneq ($(LINUX_ARM),1)
+-	PLATFORM_PKG_CONFIG_LIBRARIES += libpulse-simple
++	PLATFORM_PKG_CONFIG_LIBRARIES += jack
+ 	PLATFORM_PKG_CONFIG_LIBRARIES += alsa
+ 	PLATFORM_PKG_CONFIG_LIBRARIES += gl
+ 	PLATFORM_PKG_CONFIG_LIBRARIES += glu

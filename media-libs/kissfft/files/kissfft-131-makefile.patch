@@ -1,0 +1,39 @@
+diff --git a/Makefile b/Makefile
+index ea0b60e..97afa64 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,18 +1,28 @@
+ KFVER=131
++CC ?= cc
++CFLAGS ?= -Wall -c
++
++CFLAGS += -fPIC
+ 
+ ifeq ($(shell uname -s),Darwin)
+ 	SHARED := -Wl,-install_name,libkissfft.dylib -o libkissfft.dylib
+ else
+-	SHARED := -Wl,-soname,libkissfft.so -o libkissfft.so
++	SHARED := -Wl,-soname,libkiss.so -o libkiss.so
+ endif
+ 
+-all:
+-	gcc -Wall -fPIC -c *.c -Dkiss_fft_scalar=float -o kiss_fft.o
+-	ar crus libkissfft.a kiss_fft.o
+-	gcc -shared $(SHARED) kiss_fft.o
++all: kiss_fft.o tools/kiss_fftr.o
++	ar crus libkiss.a kiss_fft.o tools/kiss_fftr.o
++	$(CC) -shared $(SHARED) kiss_fft.o tools/kiss_fftr.o
++
++kiss_fft.o:
++	$(CC) $(CFLAGS) -c *.c -Dkiss_fft_scalar=float -o kiss_fft.o
++
++tools/kiss_fftr.o:
++	cd tools && $(CC) $(CFLAGS) -c kiss_fftr.c -Dkiss_fft_scalar=float -o kiss_fftr.o -I..
++
+ 
+ install: all
+-	cp libkissfft.so /usr/local/lib/
++	cp libkiss.so /usr/local/lib/
+ 
+ doc:
+ 	@echo "Start by reading the README file.  If you want to build and test lots of stuff, do a 'make testall'"

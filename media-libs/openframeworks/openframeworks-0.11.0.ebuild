@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
+
+inherit toolchain-funcs
 DESCRIPTION="an open source C++ toolkit for creative coding"
 HOMEPAGE="https://openframeworks.cc"
 SRC_URI="https://github.com/openframeworks/openFrameworks/archive/${PV}.tar.gz"
@@ -15,10 +17,10 @@ DEPEND="media-libs/freeimage
 	media-libs/gstreamer
 	media-libs/openal
 	media-libs/freeglut
-	media-plugins/gst-plugins-base
-	media-plugins/gst-plugins-good
-	media-plugins/gst-plugins-bad
-	media-plugins/gst-plugins-ugly
+	media-libs/gst-plugins-base
+	media-libs/gst-plugins-good
+	media-libs/gst-plugins-bad
+	media-libs/gst-plugins-ugly
 	media-plugins/gst-plugins-libav
 	media-libs/opencv
 	x11-libs/libXcursor
@@ -30,6 +32,22 @@ DEPEND="media-libs/freeimage
 	dev-libs/pugixml
 	media-libs/rtaudio
 	dev-libs/poco
-	media-sound/mpg123"
+	media-sound/mpg123
+	media-libs/glm
+	dev-cpp/nlohmann_json
+	dev-libs/kissfft
+	dev-libs/tess2
+	dev-libs/utfcpp"
+#media-sound/apulse
 RDEPEND="${DEPEND}"
 BDEPEND=""
+S="${WORKDIR}/openFrameworks-${PV}"
+PATCHES=(
+        "${FILESDIR}/${P}-jack.patch"
+)
+
+
+src_compile() {
+	cd "libs/openFrameworksCompiled/project"
+	emake USE_FMOD=0
+}
