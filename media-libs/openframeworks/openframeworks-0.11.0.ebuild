@@ -11,8 +11,8 @@ if [[ ${PV} == *9999 ]]; then
         # 9999-r0: master
         # 9999-r1: stable
         case "${PVR}" in
-                9999) EGIT_BRANCH=master ;;
-                9999-r1) EGIT_BRANCH=master-stable ;;
+                9999-r0) EGIT_BRANCH=master ;;
+                9999-r1) EGIT_BRANCH=stable ;;
         esac
 else
         GIT_ECLASS=""

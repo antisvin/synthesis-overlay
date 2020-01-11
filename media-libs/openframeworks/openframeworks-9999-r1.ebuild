@@ -3,7 +3,6 @@
 
 EAPI=7
 
-HOMEPAGE="https://openframeworks.cc"
 if [[ ${PV} == *9999 ]]; then
         SCM="git-r3"
         EGIT_REPO_URI="https://github.com/openframeworks/openFrameworks.git"
@@ -12,8 +11,8 @@ if [[ ${PV} == *9999 ]]; then
         # 9999-r0: master
         # 9999-r1: stable
         case "${PVR}" in
-                9999) EGIT_BRANCH=master ;;
-                9999-r1) EGIT_BRANCH=master-stable ;;
+                9999-r0) EGIT_BRANCH=master ;;
+                9999-r1) EGIT_BRANCH=stable ;;
         esac
 else
         GIT_ECLASS=""
@@ -22,7 +21,7 @@ fi
 
 inherit toolchain-funcs ${GIT_ECLASS}
 DESCRIPTION="an open source C++ toolkit for creative coding"
-
+HOMEPAGE="https://openframeworks.cc"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
