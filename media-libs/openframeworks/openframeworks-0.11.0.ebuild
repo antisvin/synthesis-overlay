@@ -56,7 +56,7 @@ DEPEND="media-libs/freeimage
 #media-sound/apulse
 RDEPEND="${DEPEND}"
 BDEPEND=""
-S="${WORKDIR}/openFrameworks-${PV}"
+S="${WORKDIR}/openFrameworks-${PVR}"
 PATCHES=(
         "${FILESDIR}/${P}-jack.patch"
 )
