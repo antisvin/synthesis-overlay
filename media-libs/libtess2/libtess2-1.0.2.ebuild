@@ -8,7 +8,7 @@ inherit toolchain-funcs
 DESCRIPTION="Game and tools oriented refactored version of GLU tesselator."
 HOMEPAGE="https://github.com/memononen/libtess2"
 SRC_URI="https://github.com/memononen/${PN}/archive/v${PV}.tar.gz"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 aarch64"
 LICENSE="SGI"
 SLOT="0"
 IUSE=""

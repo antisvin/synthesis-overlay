@@ -8,7 +8,7 @@ inherit toolchain-funcs
 DESCRIPTION="A mixed-radix Fast Fourier Transform library"
 HOMEPAGE="https://github.com/mborgerding/kissfft"
 SRC_URI="https://github.com/mborgerding/${PN}/archive/v${PV}.tar.gz"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 aarch64"
 LICENSE="BSD"
 SLOT="0"
 IUSE=""
