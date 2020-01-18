@@ -23,9 +23,13 @@ DEPEND="${RDEPEND}
 DOCS=( alg_outline.md README.md )
 
 src_configure() {
-	premake4 gmake --platform=$(usex amd64 "x64" "x32")
+	premake4 gmake --platform=$(usex amd64 "x64" "native")
 	# Fix ARCH variable - conflicts with Gentoo env var
 	sed 's/$(ARCH) //g' -i Build/tess2.make || die
+	if usex arm64; then
+		sed 's/-m64//g' -i Build/tess2.make || die
+		sed 's/-m64//g' -i Build/example.make || die
+	fi
 }
 
 src_compile() {
