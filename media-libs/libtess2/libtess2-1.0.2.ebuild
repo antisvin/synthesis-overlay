@@ -27,14 +27,14 @@ src_configure() {
 	# Fix ARCH variable - conflicts with Gentoo env var
 	sed 's/$(ARCH) //g' -i Build/tess2.make || die
 	if usex arm64; then
-		sed 's/-m64//g' -i Build/tess2.make || die
-		sed 's/-m64//g' -i Build/example.make || die
+		sed 's/-m64//' -i Build/tess2.make || die
+		sed 's/-m64//' -i Build/example.make || die
 	fi
 }
 
 src_compile() {
 	cd Build
-	make config=release$(usex amd64 "64" "32") verbose=1 tess2
+	make config=release64 verbose=1 tess2
 }
 
 src_install() {
