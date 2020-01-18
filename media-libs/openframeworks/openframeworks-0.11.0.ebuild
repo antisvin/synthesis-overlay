@@ -77,7 +77,8 @@ src_install() {
 	dolib.a "libs/openFrameworksCompiled/lib/linux64/libopenFrameworks.a"
 	if use projectgenerator; then
 		dobin "apps/projectGenerator/commandLine/bin/projectGenerator"
-		insinto "/usr/share/openframeworks/scripts/templates/"
-		doins -r "scripts/templates/*" 
+		insinto "/usr/share/${PN}/scripts"
+		doins -r "scripts/templates" 
+		dobin "${FILESDIR}/ofxpg"
 	fi
 }

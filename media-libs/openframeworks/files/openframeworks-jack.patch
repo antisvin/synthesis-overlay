@@ -1,5 +1,5 @@
 diff --git a/libs/openFrameworksCompiled/project/makefileCommon/config.linux.common.mk b/libs/openFrameworksCompiled/project/makefileCommon/config.linux.common.mk
-index 4f28afd9e..ab0a19863 100755
+index 4f28afd9e..53606d112 100755
 --- a/libs/openFrameworksCompiled/project/makefileCommon/config.linux.common.mk
 +++ b/libs/openFrameworksCompiled/project/makefileCommon/config.linux.common.mk
 @@ -178,7 +178,7 @@ endif
@@ -7,7 +7,7 @@ index 4f28afd9e..ab0a19863 100755
  ################################################################################
  
 -PLATFORM_LDFLAGS = -Wl,-rpath=./libs:./bin/libs -Wl,--as-needed -Wl,--gc-sections
-+PLATFORM_LDFLAGS = -Wl,-rpath=./libs:./bin/libs:/usr/include/utf8cpp:/usr/include/nlohmann -Wl,--as-needed -Wl,--gc-sections
++PLATFORM_LDFLAGS = -Wl,--as-needed -Wl,--gc-sections
  
  
  
@@ -21,7 +21,16 @@ index 4f28afd9e..ab0a19863 100755
  
  ################################################################################
  # PLATFORM LIBRARIES
-@@ -378,7 +379,7 @@ endif
+@@ -329,6 +330,8 @@ PLATFORM_LIBRARIES += uriparser
+ 
+ #static libraries (fully qualified paths)
+ PLATFORM_STATIC_LIBRARIES =
++PLATFORM_STATIC_LIBRARIES += /usr/lib64/libkiss.a
++PLATFORM_STATIC_LIBRARIES += /usr/lib64/libtess2.a
+ 
+ # shared libraries
+ PLATFORM_SHARED_LIBRARIES =
+@@ -378,7 +381,7 @@ endif
  
  
  ifneq ($(LINUX_ARM),1)
