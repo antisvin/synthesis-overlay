@@ -1,17 +1,27 @@
 diff --git a/libs/openFrameworksCompiled/project/makefileCommon/config.linux.common.mk b/libs/openFrameworksCompiled/project/makefileCommon/config.linux.common.mk
-index 4f28afd9e..1ed20a236 100755
+index 4f28afd9e..ab0a19863 100755
 --- a/libs/openFrameworksCompiled/project/makefileCommon/config.linux.common.mk
 +++ b/libs/openFrameworksCompiled/project/makefileCommon/config.linux.common.mk
-@@ -277,7 +277,7 @@ endif
+@@ -178,7 +178,7 @@ endif
+ #   Note: Leave a leading space when adding list items with the += operator
+ ################################################################################
+ 
+-PLATFORM_LDFLAGS = -Wl,-rpath=./libs:./bin/libs -Wl,--as-needed -Wl,--gc-sections
++PLATFORM_LDFLAGS = -Wl,-rpath=./libs:./bin/libs:/usr/include/utf8cpp:/usr/include/nlohmann -Wl,--as-needed -Wl,--gc-sections
+ 
+ 
+ 
+@@ -277,7 +277,8 @@ endif
  #   Note: Leave a leading space when adding list items with the += operator
  ################################################################################
  
 -PLATFORM_HEADER_SEARCH_PATHS =
 +PLATFORM_HEADER_SEARCH_PATHS = /usr/include/utf8cpp
++PLATFORM_HEADER_SEARCH_PATHS += /usr/include/nlohmann
  
  ################################################################################
  # PLATFORM LIBRARIES
-@@ -378,7 +378,7 @@ endif
+@@ -378,7 +379,7 @@ endif
  
  
  ifneq ($(LINUX_ARM),1)

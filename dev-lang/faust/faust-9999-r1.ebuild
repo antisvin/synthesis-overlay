@@ -3,7 +3,7 @@
 
 EAPI=7
 
-if [[ ${PV} == *9999 ]]; then
+if [[ ${PV} == *9999* ]]; then
 	SCM="git-r3"
 	EGIT_REPO_URI="https://github.com/grame-cncm/faust.git"
 	GIT_ECLASS="git-r3"
