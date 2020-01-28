@@ -15,4 +15,4 @@ SLOT="0"
 KEYWORDS="arm64"
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
-RDEPEND="dev-python/future dev-python/pysmbus"
+RDEPEND="dev-python/future dev-python/pysmbus dev-python/pyserial"
