@@ -14,4 +14,5 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="arm64"
 
-DEPEND="dev-python/setuptools[${PYTHON_USEDEP}] dev-python/future"
+DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
+RDEPEND="dev-python/future"
