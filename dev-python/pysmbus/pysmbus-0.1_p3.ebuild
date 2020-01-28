@@ -16,5 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="arm64"
 
+S=${WORKDIR}/${MY_P}
+
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND=""
