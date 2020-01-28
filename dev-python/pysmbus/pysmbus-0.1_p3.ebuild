@@ -6,13 +6,15 @@ PYTHON_COMPAT=( python3_6 python3_7 )
 
 inherit distutils-r1
 
-DESCRIPTION="PiVideo Control Software ."
-HOMEPAGE="https://pypi.org/project/PiVideo/ https://lintestsystems.com/"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.zip"
+MY_PV=${PV/_p/-}
+MY_P=${PN}-${MY_PV}
+DESCRIPTION="Pure Python reimplentation of python-smbus library"
+HOMEPAGE="https://pypi.org/project/pysmbus/"
+SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${MY_P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="arm64"
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
-RDEPEND="dev-python/future dev-python/pysmbus"
+RDEPEND=""
