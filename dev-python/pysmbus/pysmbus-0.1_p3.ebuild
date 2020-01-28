@@ -8,6 +8,7 @@ inherit distutils-r1
 
 MY_PV=${PV/_p/-}
 MY_P=${PN}-${MY_PV}
+MY_P_SHORT=${PN}-${PV/_p*/}
 DESCRIPTION="Pure Python reimplentation of python-smbus library"
 HOMEPAGE="https://pypi.org/project/pysmbus/"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${MY_P}.tar.gz"
@@ -16,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="arm64"
 
-S=${WORKDIR}/${MY_P}
+S=${WORKDIR}/${MY_P_SHORT}
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND=""
