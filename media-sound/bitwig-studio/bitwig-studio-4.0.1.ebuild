@@ -62,12 +62,14 @@ src_install() {
 	insinto ${BITWIG_HOME}
 	doins -r opt/bitwig-studio/*
 
-	fperms +x ${BITWIG_HOME}/bin/BitwigPluginHost64
-	fperms +x ${BITWIG_HOME}/bin/BitwigStudioEngine
-	fperms +x ${BITWIG_HOME}/bin/bitwig-vamphost
+	fperms +x ${BITWIG_HOME}/bin/BitwigAudioEngine-X64-AVX2
+	fperms +x ${BITWIG_HOME}/bin/BitwigAudioEngine-X64-AVX2
+	fperms +x ${BITWIG_HOME}/bin/BitwigPluginHost-X64-SSE41
+	fperms +x ${BITWIG_HOME}/bin/BitwigPluginHost-X86-SSE41
+	fperms +x ${BITWIG_HOME}/bin/BitwigStudio
+	fperms +x ${BITWIG_HOME}/bin/BitwigVampHost
+	fperms +x ${BITWIG_HOME}/bin/show-file-dialog-gtk3
 	fperms +x ${BITWIG_HOME}/bin/show-splash-gtk
-	fperms +x ${BITWIG_HOME}/bin32/BitwigPluginHost32
-	fperms +x ${BITWIG_HOME}/bitwig-studio
 
 	dosym ${BITWIG_HOME}/bitwig-studio /usr/bin/bitwig-studio
 	exeinto "${BITWIG_HOME}/bin"
