@@ -66,9 +66,8 @@ src_install() {
 
         fperms +x ${BITWIG_HOME}/bitwig-studio
 	fperms +x ${BITWIG_HOME}/bin/BitwigAudioEngine-X64-AVX2
-	fperms +x ${BITWIG_HOME}/bin/BitwigAudioEngine-X64-AVX2
+	fperms +x ${BITWIG_HOME}/bin/BitwigAudioEngine-X64-SSE41
 	fperms +x ${BITWIG_HOME}/bin/BitwigPluginHost-X64-SSE41
-	fperms +x ${BITWIG_HOME}/bin/BitwigPluginHost-X86-SSE41
 	fperms +x ${BITWIG_HOME}/bin/BitwigStudio
 	fperms +x ${BITWIG_HOME}/bin/BitwigVampHost
 	fperms +x ${BITWIG_HOME}/bin/show-file-dialog-gtk3
