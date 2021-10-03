@@ -74,8 +74,6 @@ src_install() {
 	fperms +x ${BITWIG_HOME}/bin/show-splash-gtk
 
 	dosym ${BITWIG_HOME}/bitwig-studio /usr/bin/bitwig-studio
-	exeinto "${BITWIG_HOME}/bin"
-	dosym ${JAVA_HOME}/bin/java ${BITWIG_HOME}/bin/BitwigStudio
 
 	insinto /usr/share/mime/packages
 	doins usr/share/mime/packages/com.bitwig.BitwigStudio.xml
