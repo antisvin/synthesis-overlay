@@ -64,6 +64,7 @@ src_install() {
 	insinto ${BITWIG_HOME}
 	doins -r opt/bitwig-studio/*
 
+        fperms +x ${BITWIG_HOME}/bitwig-studio
 	fperms +x ${BITWIG_HOME}/bin/BitwigAudioEngine-X64-AVX2
 	fperms +x ${BITWIG_HOME}/bin/BitwigAudioEngine-X64-AVX2
 	fperms +x ${BITWIG_HOME}/bin/BitwigPluginHost-X64-SSE41
