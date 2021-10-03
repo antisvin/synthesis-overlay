@@ -48,14 +48,11 @@ RDEPEND="${DEPEND}
 S=${WORKDIR}
 
 src_prepare() {
-	# Remove bundled JRE
-	rm -r "${S}/opt/bitwig-studio/lib/jre"
-
 	# Fix desktop file validation errors
-	sed -i \
-		-e 's/^\(Icon=.*\).png$/\1/g' \
-		-e 's/^\(Categories=\)Multimedia.*$/\1Audio\;AudioVideo\;/g' \
-		usr/share/applications/bitwig-studio.desktop || die
+        sed -i \
+        -e 's/Icon=.*/Icon=bitwig-studio/' \
+        -e 's/Categories=.*/Categories=AudioVideo;Audio;AudioVideoEditing/' \
+        usr/share/applications/com.bitwig.BitwigStudio.desktop || die 'sed on desktop file failed'
 	xdg_environment_reset
 	eapply_user
 }
