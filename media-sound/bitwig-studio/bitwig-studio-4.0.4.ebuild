@@ -83,7 +83,7 @@ src_install() {
 	doicon -c apps -s scalable usr/share/icons/hicolor/scalable/apps/bitwig-studio.svg
 	doicon -c mimetypes -s scalable usr/share/icons/hicolor/scalable/mimetypes/application-bitwig-*.svg
 
-	domenu usr/share/applications/bitwig-studio.desktop
+	domenu usr/share/applications/com.bitwig.BitwigStudio.desktop
 }
 
 pkg_preinst() {
