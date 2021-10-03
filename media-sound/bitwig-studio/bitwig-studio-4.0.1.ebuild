@@ -9,21 +9,19 @@ inherit eutils xdg-utils gnome2-utils unpacker
 DESCRIPTION="Music production and performance system"
 HOMEPAGE="http://bitwig.com/"
 SRC_URI="https://downloads.bitwig.com/stable/${PV}/${P}.deb"
-LICENSE="Bitwig Commercial EULA"
+LICENSE="Bitwig"
 SLOT="0"
 KEYWORDS="~amd64"
 RESTRICT="strip"
 
-IUSE="libav"
+IUSE="+jack cpu_flags_x86_sse4_1"
+REQUIRED_USE="cpu_flags_x86_sse4_1"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-		dev-java/jython
-		dev-java/oracle-jre-bin:1.8
 		dev-libs/expat
 		dev-libs/libbsd
 		gnome-extra/zenity
-		libav? ( media-video/libav )
 		media-libs/alsa-lib
 		media-libs/fontconfig
 		media-libs/freetype

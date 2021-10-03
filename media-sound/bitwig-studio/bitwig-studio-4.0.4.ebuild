@@ -9,19 +9,19 @@ inherit eutils xdg-utils gnome2-utils unpacker
 DESCRIPTION="Music production and performance system"
 HOMEPAGE="http://bitwig.com/"
 SRC_URI="https://downloads.bitwig.com/stable/${PV}/${P}.deb"
-LICENSE="Bitwig Commercial EULA"
+LICENSE="Bitwig"
 SLOT="0"
 KEYWORDS="~amd64"
 RESTRICT="strip"
 
-IUSE="libav"
+IUSE="+jack cpu_flags_x86_sse4_1"
+REQUIRED_USE="cpu_flags_x86_sse4_1"
 
 DEPEND=""
 RDEPEND="${DEPEND}
 		dev-libs/expat
 		dev-libs/libbsd
 		gnome-extra/zenity
-		libav? ( media-video/libav )
 		media-libs/alsa-lib
 		media-libs/fontconfig
 		media-libs/freetype
@@ -48,6 +48,9 @@ RDEPEND="${DEPEND}
 S=${WORKDIR}
 
 src_prepare() {
+	# Remove bundled JRE
+	rm -r "${S}/opt/bitwig-studio/lib/jre"
+
 	# Fix desktop file validation errors
 	sed -i \
 		-e 's/^\(Icon=.*\).png$/\1/g' \
@@ -68,10 +71,10 @@ src_install() {
 	fperms +x ${BITWIG_HOME}/bin/show-splash-gtk
 	fperms +x ${BITWIG_HOME}/bin32/BitwigPluginHost32
 	fperms +x ${BITWIG_HOME}/bitwig-studio
-	fperms +x ${BITWIG_HOME}/lib/jre/bin/java
 
 	dosym ${BITWIG_HOME}/bitwig-studio /usr/bin/bitwig-studio
 	exeinto "${BITWIG_HOME}/bin"
+	dosym ${JAVA_HOME}/bin/java ${BITWIG_HOME}/bin/BitwigStudio
 
 	insinto /usr/share/mime/packages
 	doins usr/share/mime/packages/bitwig-studio.xml
