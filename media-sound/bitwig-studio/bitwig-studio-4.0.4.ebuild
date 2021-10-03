@@ -27,6 +27,8 @@ RDEPEND="${DEPEND}
 		media-libs/freetype
 		media-libs/libpng:0/16
 		media-libs/mesa
+		sys-libs/zlib
+		media-video/ffmpeg
 		media-sound/jack2
 		virtual/jack
 		virtual/opengl
@@ -76,11 +78,11 @@ src_install() {
 	dosym ${JAVA_HOME}/bin/java ${BITWIG_HOME}/bin/BitwigStudio
 
 	insinto /usr/share/mime/packages
-	doins usr/share/mime/packages/bitwig-studio.xml
+	doins usr/share/mime/packages/com.bitwig.BitwigStudio.xml
 
-	doicon -c apps -s 48 usr/share/icons/hicolor/48x48/apps/bitwig-studio.png
-	doicon -c apps -s scalable usr/share/icons/hicolor/scalable/apps/bitwig-studio.svg
-	doicon -c mimetypes -s scalable usr/share/icons/hicolor/scalable/mimetypes/application-bitwig-*.svg
+	doicon -c apps -s 48 usr/share/icons/hicolor/48x48/apps/com.bitwig.BitwigStudio.png
+	doicon -c apps -s scalable usr/share/icons/hicolor/scalable/apps/com.bitwig.BitwigStudio.svg
+	doicon -c mimetypes -s scalable usr/share/icons/hicolor/scalable/mimetypes/com.bitwig.BitwigStudio.application-bitwig-*.svg
 
 	domenu usr/share/applications/com.bitwig.BitwigStudio.desktop
 }
@@ -93,11 +95,6 @@ pkg_postinst() {
 	gnome2_icon_cache_update
 	xdg_mimeinfo_database_update
 	xdg_desktop_database_update
-
-	if ! use libav; then
-		einfo "libav USE flag not set. Bitwig Studio require the avprobe and avconv tools"
-		einfo "for importing audio files."
-	fi
 }
 
 pkg_postrm() {
