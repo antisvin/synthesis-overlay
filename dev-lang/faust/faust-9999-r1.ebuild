@@ -12,7 +12,7 @@ if [[ ${PV} == *9999* ]]; then
 	# 9999-r1: master-dev
 	case "${PVR}" in
 		9999) EGIT_BRANCH=master ;;
-		9999-r1) EGIT_BRANCH=master-dev ;;
+		9999-r1) EGIT_BRANCH=custom-memory-manager ;;
 	esac
 else
 	GIT_ECLASS=""

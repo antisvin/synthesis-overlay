@@ -73,6 +73,8 @@ src_install() {
 	fperms +x ${BITWIG_HOME}/bin/show-file-dialog-gtk3
 	fperms +x ${BITWIG_HOME}/bin/show-splash-gtk
 
+	rm -f "${ED}/${BITWIG_HOME}/bin/BitwigPluginHost-X86-SSE41"
+
 	dosym ${BITWIG_HOME}/bitwig-studio /usr/bin/bitwig-studio
 
 	insinto /usr/share/mime/packages
