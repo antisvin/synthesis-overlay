@@ -27,7 +27,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc examples"
-DEPEND=">=net-libs/libmicrohttpd-0.9.76 >=dev-lang/llvm-18.1.8:* >=dev-libs/openssl-1.1.1d >=sys-libs/ncurses-6.1_p20190609 >=media-libs/libsndfile-1.0.28-r4 >=dev-libs/libedit-20190324.3.1 >=net-misc/curl-7.66.0"
+DEPEND=">=net-libs/libmicrohttpd-0.9.76 >=llvm-core/llvm-18.1.8:* >=dev-libs/openssl-1.1.1d >=sys-libs/ncurses-6.1_p20190609 >=media-libs/libsndfile-1.0.28-r4 >=dev-libs/libedit-20190324.3.1 >=net-misc/curl-7.66.0"
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
